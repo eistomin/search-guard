@@ -806,6 +806,7 @@ public class ConfigModel implements ConfigurationChangeListener {
         }
 
         orig = orig.replace("${user.name}", user.getName()).replace("${user_name}", user.getName());
+        orig = orig.replace("${user.requested_tenant}", user.getRequestedTenant()).replace("${user_requested_tenant}", user.getRequestedTenant());        
         orig = replaceRoles(orig, user);
         for (Entry<String, String> entry : user.getCustomAttributesMap().entrySet()) {
             if (entry == null || entry.getKey() == null || entry.getValue() == null) {
